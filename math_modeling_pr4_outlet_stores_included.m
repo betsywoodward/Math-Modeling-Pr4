@@ -21,10 +21,13 @@ options = optimoptions('linprog','Algorithm','dual-simplex');
 
 [xsim, fvalsim, exitflag, output, lambda] = linprog(-c, A, b, [], [], lb, u, options);
 
-xsim(4,1) = xsim(4,1) + xsim(3,1)
-xsim(9,1) = xsim(9,1) + xsim(8,1)
+xsim(4,1) = xsim(4,1) + xsim(3,1);
+xsim(9,1) = xsim(9,1) + xsim(8,1);
 
-clothes_to_the_outlet=xsim-lb'
+clothes_to_the_outlet=xsim-lb';
 
+profit_clothes_to_the_outlet= clothes_to_the_outlet.*c'*0.6 ;
+
+sum_profit = sum(profit_clothes_to_the_outlet)
 
 
