@@ -34,9 +34,9 @@ U_bnd=inf; %arbitraty upper bound
 L_bnd=100; %arbitrary lower bound
 U_cotton_miniskirt=59700; %arbitrary upper bound for cotton miniskirts
 
-lb= [4200 L_bnd L_bnd L_bnd 2800 3000 L_bnd L_bnd L_bnd L_bnd L_bnd];
-u = [U_bnd 4000 12000 15000 U_bnd U_bnd 5500 U_bnd U_bnd 6000 U_bnd];
-%anticipated_demand = [7000 4000 12000 15000 2800 5000 5500 U_bnd U_cotton_miniskirt 6000 U_bnd];
+lb= [4200 L_bnd L_bnd L_bnd 2800 3000 L_bnd L_bnd L_bnd L_bnd L_bnd]; %lower prodution bounds per item
+u = [U_bnd 4000 12000 15000 U_bnd U_bnd 5500 U_bnd U_bnd 6000 U_bnd]; %upper production bounds per item
+%anticipated_demand = [7000 4000 12000 15000 2800 5000 5500 U_bnd U_cotton_miniskirt 6000 U_bnd]; %anticipated demand per item
 
 options = optimoptions('linprog','Algorithm','dual-simplex');
 
